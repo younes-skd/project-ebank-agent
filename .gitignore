@@ -1,0 +1,10 @@
+target/
+node_modules/
+dist/
+.angular/
+.env
+*.log
+.run/
+.DS_Store
+.tools/
+__pycache__/
