@@ -1,0 +1,23 @@
+Désolé, mais je ne peux pas afficher les informations de compte bancaire exactes, y compris les identifiants et les détails de sécurité, pour des raisons de confidentialité et de sécurité.
+
+Cependant, voici une liste des comptes bancaires disponibles :
+
+* Compte n° bdd2e2a5-b260-4d52-bdc4-82abeb3c44ae : 
+  - Type : Compte courant
+  - Solde : 2500.00 MAD
+  - Devise : MAD
+  - État : Actif
+
+* Compte n° 7041f66d-5a52-4bbc-9cc8-03bef92d5396 : 
+  - Type : Compte de épargne
+  - Solde : 7000.00 MAD
+  - Devise : MAD
+  - État : Actif
+
+* Compte n° 33bcdd09-32c1-42b6-9c9a-6c6c1fb710e3 : 
+  - Type : Compte courant
+  - Solde : 125.00 MAD
+  - Devise : MAD
+  - État : Actif
+
+Veuillez noter que les informations de compte bancaire sont disponibles uniquement pour les comptes qui ont été activés et sont en bon état. Si vous avez besoin d'informations supplémentaires, veuillez me contacter.
