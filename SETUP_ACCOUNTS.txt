@@ -1,0 +1,50 @@
+CONFIGURATION DES COMPTES — PROJET EBANK
+
+1. IA LOCALE AVEC OLLAMA (OPTION PAR DÉFAUT)
+
+Votre ordinateur possède déjà Ollama et llama3.2:3b. Ce modèle annonce le support des outils.
+Lancer Ollama depuis l'application ou `ollama serve`. Le port local attendu est 11434.
+Le fichier .env contient AI_PROVIDER=ollama et OLLAMA_MODEL=llama3.2:3b.
+Aucune clé OpenAI n'est nécessaire pour cette option. Internet reste nécessaire pour Telegram et Discord.
+Vérifier le modèle : ollama list.
+Sur un autre poste : ollama pull llama3.2:3b, puis python3 dev.py.
+Vérifier le projet : python3 smoke.py --chat.
+
+2. TELEGRAM
+
+- Ouvrir le BotFather officiel : https://t.me/BotFather (nom vérifié).
+- Envoyer /newbot, choisir un nom puis un nom d'utilisateur finissant par bot.
+- Copier le token dans TELEGRAM_BOT_TOKEN du fichier .env, dans votre éditeur.
+- Ouvrir le nouveau bot et lui envoyer /start depuis votre compte.
+- Arrêter le chatbot pendant la recherche de l'identifiant, puis exécuter :
+  python3 setup_bots.py telegram
+- Le script affiche les identifiants des chats ayant contacté votre bot, sans afficher le token.
+- Copier votre identifiant dans TELEGRAM_ALLOWED_CHAT_ID.
+- Relancer python3 dev.py et envoyer : Liste les comptes et leurs soldes.
+- Vérifier une réponse fondée sur les comptes de l'API, puis poser une question de suivi.
+
+Tutoriel officiel : https://core.telegram.org/bots/tutorial
+
+3. DISCORD
+
+- Ouvrir https://discord.com/developers/applications avec votre compte.
+- Créer une application nommée EMSI EBank Demo et ouvrir la rubrique Bot.
+- Générer/récupérer le token et le mettre dans DISCORD_BOT_TOKEN de .env.
+- Activer Message Content Intent pour le bot, nécessaire au client JDA fourni.
+- Dans OAuth2 / URL Generator, choisir le scope bot et les permissions View Channels, Send Messages et Read Message History ; inviter le bot uniquement dans votre serveur de test.
+- Dans Discord, activer le mode développeur si nécessaire, faire clic droit sur votre profil puis Copier l'identifiant utilisateur.
+- Mettre cet identifiant dans DISCORD_ALLOWED_USER_ID.
+- Relancer le projet puis envoyer : !bank Liste les comptes et leurs soldes
+- Vérifier que les autres utilisateurs et les messages sans préfixe ne déclenchent pas le bot.
+
+Guide officiel : https://docs.discord.com/developers/quick-start/getting-started
+
+4. OPENAI (ALTERNATIVE FACULTATIVE)
+
+- Ouvrir https://platform.openai.com/api-keys et créer une clé pour votre propre compte.
+- Vérifier la facturation et les limites dans votre compte avant de l'utiliser.
+- Dans .env : AI_PROVIDER=openai, OPENAI_API_KEY=votre clé, OPENAI_MODEL=gpt-4o-mini.
+- Redémarrer le chatbot. Ne mettre aucun token dans Git, le README, une capture ou le chat.
+
+Un test de fournisseur simulé ne remplace pas les tests réels des bots.
+Ces étapes de création/connexion et de copie des tokens doivent être effectuées par le titulaire des comptes.

@@ -1,0 +1,64 @@
+{
+  "info": {
+    "name": "project-ebank-agent",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:8880"
+    }
+  ],
+  "item": [
+    {
+      "name": "Customers",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": "{{baseUrl}}/api/customers"
+      }
+    },
+    {
+      "name": "Accounts",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": "{{baseUrl}}/api/accounts"
+      }
+    },
+    {
+      "name": "Create account",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": "{{baseUrl}}/api/accounts",
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"customerId\": 1,\n  \"balance\": 500,\n  \"currency\": \"MAD\",\n  \"type\": \"CURRENT\"\n}"
+        }
+      }
+    },
+    {
+      "name": "Chat",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": "{{baseUrl}}/api/chat",
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"conversationId\": \"postman-1\",\n  \"message\": \"Liste les comptes et leurs soldes\"\n}"
+        }
+      }
+    }
+  ]
+}

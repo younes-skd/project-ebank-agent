@@ -1,0 +1,5 @@
+Verified 22 November 2026. Maven tests: 5; failures: 0; errors: 0.
+Run ./mvnw verify to reproduce unit and integration tests.
+Run python3 smoke.py after starting the demo to exercise localhost services.
+Angular production build passed.
+Real local Ollama/MCP integration passed; response is in verification/ollama-response.txt. Real Telegram and Discord account tests remain pending.
